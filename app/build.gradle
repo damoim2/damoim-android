@@ -51,25 +51,28 @@ dependencies {
     implementation 'androidx.activity:activity-ktx:1.5.1'
     implementation 'androidx.fragment:fragment-ktx:1.5.1'
 
-    /* Navigation Component */
+    // Navigation Component
     implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
     implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
 
-    /* retrofit */
+    // retrofit
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
-    /* okhttp */
+    // okhttp
     implementation "com.squareup.okhttp3:okhttp-bom:4.10.0"
     implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
 
-    /* Timber */
+    // Timber
     implementation 'com.jakewharton.timber:timber:5.0.1'
 
-    /* Glide */
+    // Glide
     implementation 'com.github.bumptech.glide:glide:4.14.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
 
-    /* ViewModel */
+    // ViewModel
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
+
+    // Circle ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
