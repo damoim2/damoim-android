@@ -10,11 +10,60 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" >@color/white</item>
-        <item name="android:windowLightStatusBar" >true</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@color/white</item>
     </style>
+
+    <style name="Title1">
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="Title1.bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Title2">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Title2.bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Title2.purple02">
+        <item name="android:textColor">@color/purple02</item>
+    </style>
+
+    <style name="SubTitle1">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="SubTitle1.bold">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Body1">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Body1.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Body2">
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="Body2.white">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Body3">
+        <item name="android:textSize">13sp</item>
+    </style>
+
 </resources>
