@@ -15,7 +15,7 @@
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">@color/gray05</item>
     </style>
 
     <style name="Title1">
