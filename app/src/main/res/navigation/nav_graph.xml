@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.damoim.android.ui.main.fragment.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.damoim.android.ui.main.fragment.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+    <fragment
+        android:id="@+id/calenderFragment"
+        android:name="com.damoim.android.ui.main.fragment.calender.CalenderFragment"
+        android:label="CalenderFragment"
+        tools:layout="@layout/fragment_calender" />
+
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.damoim.android.ui.main.fragment.chat.ChatFragment"
+        android:label="ChatFragment"
+        tools:layout="@layout/fragment_chat" />
 </navigation>
