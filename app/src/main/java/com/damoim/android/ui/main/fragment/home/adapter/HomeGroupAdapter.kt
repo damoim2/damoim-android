@@ -17,7 +17,7 @@ class HomeGroupAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         const val FOOTER = 2
     }
 
-    fun setMovieList(newItems: List<Group>) {
+    fun setItemList(newItems: List<Group>) {
         items.run {
             clear()
             addAll(newItems)

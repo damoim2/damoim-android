@@ -10,7 +10,7 @@
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:statusBarColor">@color/gray06</item>
         <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
@@ -66,6 +66,16 @@
 
     <style name="Body3">
         <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="PopupWindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/view_slide_top_to_down</item>
+        <item name="android:windowExitAnimation">@anim/view_slide_down_to_up</item>
+    </style>
+
+    <style name="PopupWindowFadeAnimation">
+        <item name="android:windowEnterAnimation">@anim/view_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/view_fade_out</item>
     </style>
 
 </resources>
