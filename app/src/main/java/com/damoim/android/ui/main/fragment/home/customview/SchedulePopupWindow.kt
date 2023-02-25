@@ -2,6 +2,7 @@ package com.damoim.android.ui.main.fragment.home.customview
 
 import android.widget.LinearLayout
 import android.widget.PopupWindow
+import com.damoim.android.R
 import com.damoim.android.data.Schedule
 import com.damoim.android.databinding.PopupWindowBinding
 import com.damoim.android.ui.main.fragment.home.adapter.GroupScheduleAdapter
@@ -14,10 +15,12 @@ class SchedulePopupWindow(
 ) : PopupWindow(
     binding.root,
     LinearLayout.LayoutParams.MATCH_PARENT,
-    LinearLayout.LayoutParams.WRAP_CONTENT) {
+    LinearLayout.LayoutParams.WRAP_CONTENT,
+    false) {
 
     init {
         setupView()
+        animationStyle = R.style.PopupWindowAnimation
     }
 
     private fun setupView() {

@@ -2,6 +2,7 @@ package com.damoim.android.ui.main.fragment.home
 
 import android.os.Bundle
 import android.system.Os.bind
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import android.view.animation.AlphaAnimation
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.RadioButton
+import androidx.core.view.children
 import androidx.core.widget.PopupWindowCompat.showAsDropDown
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,13 +25,14 @@ import com.damoim.android.ui.main.fragment.chat.ChatContract
 import com.damoim.android.ui.main.fragment.home.adapter.GroupScheduleAdapter
 import com.damoim.android.ui.main.fragment.home.adapter.HomeGroupAdapter
 import com.damoim.android.ui.main.fragment.home.customview.SchedulePopupWindow
+import com.damoim.android.ui.main.fragment.home.customview.SelectorButton
 import timber.log.Timber
 
 class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind,
     R.layout.fragment_home), HomeContract.View {
     private val groupAdapter by lazy { HomeGroupAdapter() }
     private val scheduleAdapter by lazy { GroupScheduleAdapter() }
-    private lateinit var popupWindow: PopupWindow
+    private var popupWindow: PopupWindow? = null
 
     private val testItems = arrayListOf(
         Group("", "테스트1"),
@@ -42,9 +45,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     )
 
     private val testItems2 = arrayListOf(
-        Schedule("모임01", "10월 10일 목요일", "오후 06:30"),
-        Schedule("모임01", "10월 10일 목요일", "오후 06:30"),
-        Schedule("모임01", "10월 10일 목요일", "오후 06:30")
+        Schedule("모임01", "10월 10일 목요일", "오후 05:30"),
+        Schedule("모임02", "10월 11일 금요일", "오후 06:30"),
+        Schedule("모임03", "10월 12일 토요일", "오후 07:30")
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,24 +58,60 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     }
 
     private fun initView() {
-        binding.homeRecyclerview.adapter = groupAdapter
-        groupAdapter.setItemList(testItems)
+        with(binding) {
+            homeRecyclerview.adapter = groupAdapter
+            groupAdapter.setItemList(testItems)
 
-        binding.homeRecyclerviewSchedule.adapter = scheduleAdapter
-        scheduleAdapter.setItemList(testItems2.subList(0, 1))
+            homeRecyclerviewSchedule.adapter = scheduleAdapter
+            scheduleAdapter.setItemList(testItems2.subList(0, 1))
 
-        binding.homeRadioBtn1.setOnClickListener {
-            onRadioButtonClicked(it)
+            homeRadioBtn1.setOnClickListener {
+                onRadioButtonClicked(it)
+            }
+
+            homeRadioBtn2.setOnClickListener {
+                onRadioButtonClicked(it)
+            }
+
+            homeImgDropBtn.setOnClickListener {
+                showPopUpWindow(::onPopUpWindowDismiss)
+            }
+
+            homeSelectorBtnDate1.setOnClickListener {
+                selectedDateButton(it as SelectorButton)
+            }
+
+            homeSelectorBtnDate2.setOnClickListener {
+                selectedDateButton(it as SelectorButton)
+            }
+
+            homeSelectorBtnDate3.setOnClickListener {
+                selectedDateButton(it as SelectorButton)
+            }
+
+            homeSelectorBtnDate4.setOnClickListener {
+                selectedDateButton(it as SelectorButton)
+            }
+
+            homeSelectorBtnDate5.setOnClickListener {
+                selectedDateButton(it as SelectorButton)
+            }
         }
+    }
 
-        binding.homeRadioBtn2.setOnClickListener {
-            onRadioButtonClicked(it)
+    private fun selectedDateButton(view: SelectorButton) {
+        val isChecked = view.isChecked ?: false
+        if (isChecked) return
+
+        for (i in binding.linearLayout.children) {
+            if (i.id == view.id) {
+                view.setChecked(true)
+            } else {
+                if (i is SelectorButton) {
+                    i.setChecked(false)
+                }
+            }
         }
-
-        binding.homeImgDropBtn.setOnClickListener {
-            showPopUpWindow(::onPopUpWindowDismiss)
-        }
-
     }
 
     private fun onRadioButtonClicked(view: View) {
@@ -93,13 +132,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     }
 
     private fun showPopUpWindow(onDismiss: () -> Unit) {
-        showDarkView()
         popupWindow = drawPopUpWindow()
-        popupWindow.apply {
-            width = WindowManager.LayoutParams.MATCH_PARENT
-            height = WindowManager.LayoutParams.WRAP_CONTENT
-            isFocusable = false
-            animationStyle = R.style.PopupWindowAnimation
+        popupWindow?.apply {
+            showDarkView()
             showAsDropDown(binding.homeViewPopupWindowTop)
             setOnDismissListener { onDismiss() }
         }
@@ -136,9 +171,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         }
     }
 
+    override fun onPause() {
+        popupWindow?.dismiss()
+        super.onPause()
+    }
+
     override fun onStop() {
         super.onStop()
         binding.homeRadioBtn2.isChecked = false
         binding.homeRadioBtn1.isChecked = true
     }
+
 }

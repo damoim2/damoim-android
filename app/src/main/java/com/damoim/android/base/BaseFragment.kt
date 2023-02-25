@@ -30,14 +30,14 @@ abstract class BaseFragment<B : ViewBinding>(private val bind: (View) -> B, @Lay
 
     override fun onStop() {
         for (toast in toastList) {
-            toast.cancel() //출력해야하는 Toast의 작업을 취소
+            toast.cancel()
         }
-        toastList.clear() //Toast 리스트 초기화
+        toastList.clear()
         super.onStop()
     }
 
     override fun onDestroyView() {
-        _binding = null //binding 해제
+        _binding = null
         super.onDestroyView()
     }
 

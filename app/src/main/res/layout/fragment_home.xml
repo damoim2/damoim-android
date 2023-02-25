@@ -10,7 +10,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/home_constraint"
@@ -45,156 +45,91 @@
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_marginTop="14dp"
                 android:orientation="horizontal"
+                android:paddingHorizontal="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView">
 
-                <LinearLayout
-                    android:layout_marginStart="15dp"
-                    android:id="@+id/home_ll_date1"
-                    android:gravity="center_horizontal"
+                <com.damoim.android.ui.main.fragment.home.customview.SelectorButton
+                    android:id="@+id/home_selector_btn_date1"
                     android:layout_weight="1"
-                    android:layout_marginHorizontal="3dp"
                     android:layout_width="0dp"
-                    android:paddingVertical="8dp"
-                    android:paddingHorizontal="6dp"
-                    android:background="@drawable/bg_btn_purple01"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/home_txt_date1_day_of_the_week"
-                        android:text="월"
-                        style="@style/Body2"
-                        android:textColor="@color/white"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dp"/>
-                    <TextView
-                        android:id="@+id/home_txt_date1_day"
-                        android:text="10"
-                        style="@style/Body1"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="3dp"
+                    app:isChecked="true"
+                    app:layoutBackground="@drawable/bg_btn_purple01"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:text1="월"
+                    app:text2="10"
+                    app:textColor="@color/white" />
 
-                <LinearLayout
-                    android:id="@+id/home_ll_date2"
-                    android:gravity="center_horizontal"
-                    android:layout_marginHorizontal="3dp"
+                <com.damoim.android.ui.main.fragment.home.customview.SelectorButton
+                    android:id="@+id/home_selector_btn_date2"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:paddingVertical="8dp"
-                    android:paddingHorizontal="6dp"
-                    android:background="@drawable/bg_btn_gray06_gray05"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/home_txt_date2_day_of_the_week"
-                        android:text="월"
-                        style="@style/Body2"
-                        android:textColor="@color/gray03"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dp"/>
-                    <TextView
-                        android:id="@+id/home_txt_date2_day"
-                        android:text="10"
-                        style="@style/Body1"
-                        android:textColor="@color/gray03"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/home_ll_date3"
-                    android:gravity="center_horizontal"
+                    android:layout_height="match_parent"
                     android:layout_marginHorizontal="3dp"
+                    app:isChecked="false"
+                    app:layoutBackground="@drawable/bg_btn_gray06_gray05"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:text1="월"
+                    app:text2="10"
+                    app:textColor="@color/gray03" />
+
+                <com.damoim.android.ui.main.fragment.home.customview.SelectorButton
+                    android:id="@+id/home_selector_btn_date3"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:paddingVertical="8dp"
-                    android:paddingHorizontal="6dp"
-                    android:background="@drawable/bg_btn_gray06_gray05"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/home_txt_date3_day_of_the_week"
-                        android:text="월"
-                        style="@style/Body2"
-                        android:textColor="@color/gray03"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dp"/>
-                    <TextView
-                        android:id="@+id/home_txt_date3_day"
-                        android:text="10"
-                        style="@style/Body1"
-                        android:textColor="@color/gray03"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:id="@+id/home_ll_date4"
-                    android:gravity="center_horizontal"
+                    android:layout_height="match_parent"
                     android:layout_marginHorizontal="3dp"
+                    app:isChecked="false"
+                    app:layoutBackground="@drawable/bg_btn_gray06_gray05"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:text1="월"
+                    app:text2="10"
+                    app:textColor="@color/gray03" />
+
+                <com.damoim.android.ui.main.fragment.home.customview.SelectorButton
+                    android:id="@+id/home_selector_btn_date4"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:paddingVertical="8dp"
-                    android:paddingHorizontal="6dp"
-                    android:background="@drawable/bg_btn_gray06_gray05"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/home_txt_date4_day_of_the_week"
-                        android:text="월"
-                        style="@style/Body2"
-                        android:textColor="@color/gray03"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dp"/>
-                    <TextView
-                        android:id="@+id/home_txt_date4_day"
-                        android:text="10"
-                        style="@style/Body1"
-                        android:textColor="@color/gray03"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_marginEnd="15dp"
-                    android:id="@+id/home_ll_date5"
-                    android:gravity="center_horizontal"
+                    android:layout_height="match_parent"
                     android:layout_marginHorizontal="3dp"
+                    app:isChecked="false"
+                    app:layoutBackground="@drawable/bg_btn_gray06_gray05"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:text1="월"
+                    app:text2="10"
+                    app:textColor="@color/gray03" />
+
+                <com.damoim.android.ui.main.fragment.home.customview.SelectorButton
+                    android:id="@+id/home_selector_btn_date5"
                     android:layout_weight="1"
                     android:layout_width="0dp"
-                    android:paddingVertical="8dp"
-                    android:paddingHorizontal="6dp"
-                    android:background="@drawable/bg_btn_gray06_gray05"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-                    <TextView
-                        android:id="@+id/home_txt_date5_day_of_the_week"
-                        android:text="월"
-                        style="@style/Body2"
-                        android:textColor="@color/gray03"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="6dp"/>
-                    <TextView
-                        android:id="@+id/home_txt_date5_day"
-                        android:text="10"
-                        style="@style/Body1"
-                        android:textColor="@color/gray03"
-                        android:textStyle="bold"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-                </LinearLayout>
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="3dp"
+                    app:isChecked="false"
+                    app:layoutBackground="@drawable/bg_btn_gray06_gray05"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:text1="월"
+                    app:text2="10"
+                    app:textColor="@color/gray03" />
+
+
+
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -203,12 +138,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
+                android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toTopOf="@+id/home_img_drop_btn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout"
-                tools:listitem="@layout/schedule_item" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
             <View
                 android:id="@+id/home_view_popup_window_top"
@@ -282,11 +217,11 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_recyclerview"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="18dp"
+            android:nestedScrollingEnabled="false"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4"
