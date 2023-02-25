@@ -24,6 +24,10 @@ class SchedulePopupWindow(
         binding.popupWindowRecyclerview.adapter = adapter
         adapter.setItemList(items)
 
+        binding.popupWindowImgDropUpBtn.setOnClickListener {
+            dismiss()
+        }
+
         contentView = binding.root
     }
 }
