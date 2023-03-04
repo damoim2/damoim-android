@@ -1,27 +1,78 @@
 package com.damoim.android.base
 
-import android.os.Bundle
+import android.content.Context
+import android.os.*
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.annotation.LayoutRes
-import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-
-abstract class BaseFragment<VDB : ViewDataBinding>(
-    @LayoutRes private val layoutResId: Int
-) : Fragment(layoutResId) {
+import androidx.viewbinding.ViewBinding
+import com.damoim.android.ui.main.MainActivity
+import com.damoim.android.util.LoadingDialog
+import com.google.android.material.snackbar.Snackbar
 
 
-    private lateinit var _binding: VDB
+abstract class BaseFragment<B : ViewBinding>(private val bind: (View) -> B, @LayoutRes layoutResId: Int) : Fragment(layoutResId) {
+    private var _binding: B? = null
+    private val toastList = arrayListOf<Toast>() //출력할 Toast 객체를 저장할 리스트
+    lateinit var loadingDialog: LoadingDialog
 
-    protected val binding: VDB get() = _binding
+    protected val binding get() = _binding!!
 
-    private fun <T : ViewDataBinding> bind(view: View): T = DataBindingUtil.bind(view)!!
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        _binding = bind(super.onCreateView(inflater, container, savedInstanceState)!!)
+        return binding.root
+    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        _binding = bind(view)
+    override fun onStop() {
+        for (toast in toastList) {
+            toast.cancel() //출력해야하는 Toast의 작업을 취소
+        }
+        toastList.clear() //Toast 리스트 초기화
+        super.onStop()
+    }
+
+    override fun onDestroyView() {
+        _binding = null //binding 해제
+        super.onDestroyView()
+    }
+
+    fun showCustomToast(message: String) {
+        val toast = Toast.makeText(activity, message, Toast.LENGTH_SHORT)
+        toast.show()
+        toastList.add(toast)
+    }
+
+    fun showCustomSnackBar(view: View, message: String) {
+        Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show()
+    }
+
+    fun showLoadingDialog(context: Context) {
+        loadingDialog = LoadingDialog(context)
+        loadingDialog.show()
+    }
+
+    fun dismissLoadingDialog() {
+        if (loadingDialog.isShowing) {
+            loadingDialog.dismiss()
+        }
+    }
+
+    protected fun hideKeyboard() {
+        val inputManager = requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val currentFocus = requireActivity().window.currentFocus
+        if (currentFocus != null) {
+            inputManager.hideSoftInputFromWindow(currentFocus.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+        }
+    }
+
+    fun visibleMainBottomNav(isVisible: Boolean) {
+        if (requireActivity() is MainActivity) {
+            (requireActivity() as MainActivity).visibleBottomNavigation(isVisible)
+        }
     }
 }
