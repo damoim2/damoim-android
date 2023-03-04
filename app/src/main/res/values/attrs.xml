@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SelectorButton">
+        <attr name="isChecked" format="boolean" />
+        <attr name="layoutBackground" format="reference|integer|color"/>
+        <attr name="text1" format="reference|string" />
+        <attr name="text2" format="reference|string" />
+        <attr name="textColor" format="reference|integer|color" />
+    </declare-styleable>
+</resources>

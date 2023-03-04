@@ -10,4 +10,6 @@
     <string name="my_account">내 계좌</string>
     <string name="modify_or_remove">수정/삭제</string>
     <string name="setting">설정</string>
+    <string name="my_group">나의 모임</string>
+    <string name="upcoming_schedule">다가오는 일정</string>
 </resources>

@@ -8,6 +8,7 @@ import com.damoim.android.R
 import com.damoim.android.base.BaseActivity
 import com.damoim.android.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import timber.log.Timber
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
