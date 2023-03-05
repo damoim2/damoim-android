@@ -13,6 +13,7 @@ import android.widget.PopupWindow
 import android.widget.RadioButton
 import androidx.core.view.children
 import androidx.core.widget.PopupWindowCompat.showAsDropDown
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.damoim.android.R
@@ -60,6 +61,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     private fun initView() {
         with(binding) {
             homeRecyclerview.adapter = groupAdapter
+            groupAdapter.setClickListener {
+                findNavController().navigate(R.id.action_homeFragment_to_groupFragment)
+            }
             groupAdapter.setItemList(testItems)
 
             homeRecyclerviewSchedule.adapter = scheduleAdapter

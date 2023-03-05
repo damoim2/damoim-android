@@ -7,12 +7,15 @@ import androidx.navigation.ui.setupWithNavController
 import com.damoim.android.R
 import com.damoim.android.base.BaseActivity
 import com.damoim.android.databinding.ActivityMainBinding
+import com.damoim.android.util.Utils
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import timber.log.Timber
 
 class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        Utils.setFullScreenWithStatusBar(this)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.main_container) as NavHostFragment

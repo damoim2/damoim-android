@@ -11,12 +11,16 @@ import com.damoim.android.databinding.HomeGroupItemBinding
 
 class HomeGroupAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val items = ArrayList<Group>()
+    private lateinit var listener: () -> Unit
+
+    fun setClickListener(newListener: () -> Unit) {
+        listener = newListener
+    }
 
     companion object {
         const val ITEM = 1
         const val FOOTER = 2
     }
-
     fun setItemList(newItems: List<Group>) {
         items.run {
             clear()
@@ -36,7 +40,7 @@ class HomeGroupAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return if (viewType == ITEM) {
             HomeGroupViewHolder(
-                HomeGroupItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+                HomeGroupItemBinding.inflate(LayoutInflater.from(parent.context), parent, false), listener)
         } else {
             HomeGroupAddViewHolder(
                 HomeGroupAddItemBinding.inflate(LayoutInflater.from(parent.context), parent, false))
