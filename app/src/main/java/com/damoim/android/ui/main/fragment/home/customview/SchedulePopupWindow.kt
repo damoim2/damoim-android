@@ -10,7 +10,7 @@ import com.damoim.android.ui.main.fragment.home.adapter.GroupScheduleAdapter
 
 class SchedulePopupWindow(
     private val binding: PopupWindowBinding,
-    private val adapter: GroupScheduleAdapter,
+    val adapter: GroupScheduleAdapter,
     private val items: List<Schedule>,
 ) : PopupWindow(
     binding.root,

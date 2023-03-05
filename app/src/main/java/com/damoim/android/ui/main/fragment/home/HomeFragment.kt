@@ -32,7 +32,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     R.layout.fragment_home), HomeContract.View {
     private val groupAdapter by lazy { HomeGroupAdapter() }
     private val scheduleAdapter by lazy { GroupScheduleAdapter() }
-    private var popupWindow: PopupWindow? = null
+    private var popupWindow: SchedulePopupWindow? = null
 
     private val testItems = arrayListOf(
         Group("", "테스트1"),
@@ -45,9 +45,39 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
     )
 
     private val testItems2 = arrayListOf(
-        Schedule("모임01", "10월 10일 목요일", "오후 05:30"),
-        Schedule("모임02", "10월 11일 금요일", "오후 06:30"),
-        Schedule("모임03", "10월 12일 토요일", "오후 07:30")
+        Schedule("모임01", "10월 10일 월요일", "오후 05:30"),
+        Schedule("모임02", "10월 10일 월요일", "오후 06:30")
+    )
+
+    private val testItems3 = arrayListOf(
+        Schedule("모임01", "10월 11일 화요일", "오후 05:30"),
+        Schedule("모임02", "10월 11일 화요일", "오후 06:30"),
+        Schedule("모임03", "10월 11일 화요일", "오후 07:30"),
+        Schedule("모임03", "10월 11일 화요일", "오후 07:30")
+    )
+
+    private val testItems4 = arrayListOf(
+        Schedule("모임01", "10월 12일 수요일", "오후 05:30"),
+        Schedule("모임02", "10월 12일 수요일", "오후 06:30"),
+        Schedule("모임03", "10월 12일 수요일", "오후 07:30"),
+        Schedule("모임03", "10월 12일 수요일", "오후 07:30"),
+        Schedule("모임03", "10월 12일 수요일", "오후 07:30"),
+        Schedule("모임03", "10월 12일 수요일", "오후 07:30"),
+        Schedule("모임03", "10월 12일 수요일", "오후 07:30")
+    )
+
+    private val testItems5 = arrayListOf(
+        Schedule("모임01", "10월 13일 목요일", "오후 05:30"),
+        Schedule("모임02", "10월 13일 목요일", "오후 06:30"),
+        Schedule("모임03", "10월 13일 목요일", "오후 07:30"),
+        Schedule("모임03", "10월 13일 목요일", "오후 07:30"),
+        Schedule("모임03", "10월 13일 목요일", "오후 07:30")
+    )
+
+    private val testItems6 = arrayListOf(
+        Schedule("모임01", "10월 14일 금요일", "오후 05:30"),
+        Schedule("모임02", "10월 14일 금요일", "오후 06:30"),
+        Schedule("모임03", "10월 14일 금요일", "오후 07:30")
     )
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -77,24 +107,44 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
                 showPopUpWindow(::onPopUpWindowDismiss)
             }
 
+            homeSelectorBtnDate1.text1?.text = "월"
+            homeSelectorBtnDate1.text2?.text = "10"
             homeSelectorBtnDate1.setOnClickListener {
                 selectedDateButton(it as SelectorButton)
+                scheduleAdapter.setItemList(testItems2.subList(0, 1))
+                popupWindow?.adapter?.setItemList(testItems2.subList(1, testItems2.size))
             }
 
+            homeSelectorBtnDate2.text1?.text = "화"
+            homeSelectorBtnDate2.text2?.text = "11"
             homeSelectorBtnDate2.setOnClickListener {
                 selectedDateButton(it as SelectorButton)
+                scheduleAdapter.setItemList(testItems3.subList(0, 1))
+                popupWindow?.adapter?.setItemList(testItems3.subList(1, testItems3.size))
             }
 
+            homeSelectorBtnDate3.text1?.text = "수"
+            homeSelectorBtnDate3.text2?.text = "12"
             homeSelectorBtnDate3.setOnClickListener {
                 selectedDateButton(it as SelectorButton)
+                scheduleAdapter.setItemList(testItems4.subList(0, 1))
+                popupWindow?.adapter?.setItemList(testItems4.subList(1, testItems4.size))
             }
 
+            homeSelectorBtnDate4.text1?.text = "목"
+            homeSelectorBtnDate4.text2?.text = "13"
             homeSelectorBtnDate4.setOnClickListener {
                 selectedDateButton(it as SelectorButton)
+                scheduleAdapter.setItemList(testItems5.subList(0, 1))
+                popupWindow?.adapter?.setItemList(testItems5.subList(1, testItems5.size))
             }
 
+            homeSelectorBtnDate5.text1?.text = "금"
+            homeSelectorBtnDate5.text2?.text = "14"
             homeSelectorBtnDate5.setOnClickListener {
                 selectedDateButton(it as SelectorButton)
+                scheduleAdapter.setItemList(testItems6.subList(0, 1))
+                popupWindow?.adapter?.setItemList(testItems6.subList(1, testItems6.size))
             }
         }
     }
@@ -144,7 +194,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         hideDarkView()
     }
 
-    private fun drawPopUpWindow(): PopupWindow {
+    private fun drawPopUpWindow(): SchedulePopupWindow {
         val popUpView = PopupWindowBinding.inflate(layoutInflater)
 
         return SchedulePopupWindow(
