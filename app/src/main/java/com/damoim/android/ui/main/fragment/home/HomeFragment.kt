@@ -171,13 +171,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::bind
         }
     }
 
-    override fun onPause() {
-        popupWindow?.dismiss()
-        super.onPause()
-    }
-
     override fun onStop() {
         super.onStop()
+        popupWindow?.dismiss()
         binding.homeRadioBtn2.isChecked = false
         binding.homeRadioBtn1.isChecked = true
     }
