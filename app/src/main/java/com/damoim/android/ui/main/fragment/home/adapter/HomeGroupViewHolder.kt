@@ -19,7 +19,7 @@ class HomeGroupViewHolder(private val binding: HomeGroupItemBinding) :
             Glide.with(itemView.context).load(item.img)
                 .placeholder(R.drawable.img_defult_group)
                 .error(R.drawable.img_defult_group)
-                .transform(CenterCrop(), RoundedCorners(16))
+                .transform(CenterCrop())
                 .into(homeGroupItemImg)
         }
     }
