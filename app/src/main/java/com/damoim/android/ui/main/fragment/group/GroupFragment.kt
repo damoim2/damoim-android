@@ -1,7 +1,9 @@
 package com.damoim.android.ui.main.fragment.group
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import androidx.core.view.GravityCompat
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.damoim.android.R
@@ -126,6 +128,14 @@ class GroupFragment : BaseFragment<FragmentGroupBinding>(
 
             groupImgBackBtn.setOnClickListener {
                 findNavController().popBackStack()
+            }
+
+            groupImgMenuBtn.setOnClickListener {
+                groupFragment.openDrawer(GravityCompat.END)
+            }
+
+            groupDrawer.groupDrawerImgClose.setOnClickListener {
+                groupFragment.closeDrawer(GravityCompat.END)
             }
         }
     }
