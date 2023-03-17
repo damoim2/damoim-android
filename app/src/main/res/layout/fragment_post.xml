@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/postFragment"
+    tools:context=".ui.main.fragment.post.PostFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/post_scroll"
+        app:layout_constraintBottom_toTopOf="@id/post_ll_comment_input_box"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/purple01"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/post_img_back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="40dp"
+                    android:src="@drawable/ic_arrow"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/post_txt_title"
+                    style="@style/Title1.bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toStartOf="@+id/post_img_back"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="계모임 이름" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/post_cl_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/gray06"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/post_item_img_writer_profile_img"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/img_default_profile"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/post_item_txt_writer_name"
+                    style="@style/SubTitle1.bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/post_item_img_writer_profile_img"
+                    app:layout_constraintStart_toEndOf="@+id/post_item_img_writer_profile_img"
+                    app:layout_constraintTop_toTopOf="@+id/post_item_img_writer_profile_img"
+                    tools:text="작성자" />
+
+                <TextView
+                    android:id="@+id/post_item_txt_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/post_item_txt_writer_name"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/post_item_txt_writer_name"
+                    tools:text="12월 12일" />
+
+                <TextView
+                    android:id="@+id/post_txt_contents"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/gray01"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_item_txt_writer_name"
+                    tools:text="있는 그들의 커다란 주며, 든 이는 철환하였는가? 노년에게서 끓는 우리 이 살았으며, 더운지라 웅대한 모래뿐일 때문이다. 설산에서 것이 얼음 같은 것이다. 청춘은 할지라도 가치를 풍부하게 장식하는 보배를 날카로우나 것이다. 바이며, 아니더면, 반짝이는 있다. 되려니와, 때까지 피가 희망의 과실이 밥을 온갖 듣는다. 창공에 간에 능히 낙원을 속에 방지하는 착목한는 속에서 구하기 봄바람이다. 물방아 노래하며 생의 뜨거운지라, 가치를 이상 인생을 인간이 들어 있다. 커다란 인생의 자신과 황금시대를 가진 내는 모래뿐일 인생을 봄바람이다. 인생에 풀밭에 몸이 같이, 생명을 칼이다. 예수는 우리 평화스러운 듣는다." />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/post_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_txt_contents">
+
+                    <LinearLayout
+                        android:id="@+id/post_ll_main_img_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/post_img_contents_img1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/img_default_group" />
+
+                        <LinearLayout
+                            android:id="@+id/post_ll_child_img_container"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="2dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/post_img_contents_img2"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="2dp"
+                                android:layout_weight="1"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/img_default_group" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/post_cl_grand_child_img_container"
+                                android:layout_width="match_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1">
+
+                                <ImageView
+                                    android:id="@+id/post_img_contents_img3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/img_default_group"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/post_txt_img_count"
+                                    style="@style/Title2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="+2"
+                                    android:textColor="@color/white"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <ImageView
+                    android:id="@+id/post_item_img_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/ic_like_line"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/post_card" />
+
+                <TextView
+                    android:id="@+id/post_item_txt_like"
+                    style="@style/Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/post_item_img_like"
+                    app:layout_constraintStart_toEndOf="@+id/post_item_img_like"
+                    app:layout_constraintTop_toTopOf="@+id/post_item_img_like"
+                    tools:text="좋아요 10개" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/post_cl_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@color/gray06"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/post_cl_container">
+
+                <ImageView
+                    android:id="@+id/post_img_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_comment_line"
+                    app:layout_constraintStart_toStartOf="@+id/post_cl_comment"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/post_txt_comment"
+                    style="@style/Body2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/post_img_comment"
+                    app:layout_constraintStart_toEndOf="@+id/post_img_comment"
+                    app:layout_constraintTop_toTopOf="@+id/post_img_comment"
+                    tools:text="댓글 8개" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/post_recycler_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/post_img_comment"
+                    tools:listitem="@layout/outside_comment_item" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+        android:paddingTop="8dp"
+        android:background="@drawable/bg_layout_gray07_top_purple04"
+        android:id="@+id/post_ll_comment_input_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@drawable/bg_layout_gray05"
+            android:layout_marginHorizontal="16dp">
+
+            <TextView
+                android:paddingVertical="2dp"
+                android:paddingHorizontal="4dp"
+                android:id="@+id/post_txt_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                tools:text="\@김초코"
+                android:textSize="13sp"
+                android:background="@drawable/bg_btn_purple05"
+                android:textColor="@color/purple01"/>
+            <EditText
+                android:id="@+id/post_edit_txt_input_box"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="8dp"
+                android:background="@null"
+                android:hint="@string/comment_input_hint"
+                android:textColorHint="@color/gray03"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/post_img_btn"
+            android:layout_gravity="right"
+            android:layout_marginRight="16dp"
+            android:layout_marginVertical="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:src="@drawable/btn_purple_circle"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

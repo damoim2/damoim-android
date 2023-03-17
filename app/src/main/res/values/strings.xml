@@ -12,4 +12,6 @@
     <string name="setting">설정</string>
     <string name="my_group">나의 모임</string>
     <string name="upcoming_schedule">다가오는 일정</string>
+    <string name="comment_input_hint">댓글을 입력해주세요.</string>
+    <string name="recomment">답글달기</string>
 </resources>

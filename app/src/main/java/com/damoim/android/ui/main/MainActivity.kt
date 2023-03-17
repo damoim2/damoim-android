@@ -23,6 +23,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
         val navController = navHostFragment.navController
         binding.mainBottom
             .setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment,
+                R.id.chatFragment,
+                R.id.calenderFragment,
+                R.id.profileFragment -> {
+                    binding.mainBottom.visibility = View.VISIBLE
+                }
+                else -> {
+                    binding.mainBottom.visibility = View.GONE
+                }
+            }
+        }
     }
 
     fun visibleBottomNavigation(isVisible: Boolean) {

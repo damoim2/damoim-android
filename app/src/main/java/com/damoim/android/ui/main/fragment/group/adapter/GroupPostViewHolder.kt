@@ -2,6 +2,7 @@ package com.damoim.android.ui.main.fragment.group.adapter
 
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -12,9 +13,12 @@ import com.damoim.android.databinding.GroupPostItemBinding
 
 class GroupPostViewHolder(
     private val binding: GroupPostItemBinding
-) :
-    RecyclerView.ViewHolder(binding.root) {
-
+) : RecyclerView.ViewHolder(binding.root) {
+    init {
+        binding.groupPostItemTxtMore.setOnClickListener {
+            itemView.findNavController().navigate(R.id.action_groupFragment_to_postFragment)
+        }
+    }
     fun bind(item: Post) {
         with(binding) {
             Glide.with(itemView.context).load(item.writerProfileImage)

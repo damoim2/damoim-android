@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="4dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/inside_comment_item_img_writer_profile_img"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/img_default_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/inside_comment_item_txt_writer_name"
+        style="@style/SubTitle1.bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        app:layout_constraintBottom_toBottomOf="@+id/inside_comment_item_img_writer_profile_img"
+        app:layout_constraintStart_toEndOf="@+id/inside_comment_item_img_writer_profile_img"
+        app:layout_constraintTop_toTopOf="@+id/inside_comment_item_img_writer_profile_img"
+        tools:text="작성자" />
+
+    <TextView
+        android:id="@+id/inside_comment_item_txt_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/inside_comment_item_txt_writer_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/inside_comment_item_txt_writer_name"
+        tools:text="12월 12일" />
+
+    <TextView
+        android:id="@+id/inside_comment_item_txt_contents"
+        android:layout_width="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/gray01"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/inside_comment_item_img_writer_profile_img"
+        app:layout_constraintTop_toBottomOf="@+id/inside_comment_item_txt_writer_name"
+        tools:text="흙으로 하나에 마리아 내일 소학교 별 이름과, 듯합니다. 슬퍼하는 어머님, 별 나의 같이 된 릴케 불러 덮어 까닭입니다" />
+
+    <TextView
+        android:id="@+id/inside_comment_txt_recomment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recomment"
+        android:textColor="@color/purple05"
+        android:textSize="13sp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toStartOf="@+id/inside_comment_item_txt_contents"
+        app:layout_constraintTop_toBottomOf="@+id/inside_comment_item_txt_contents" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
