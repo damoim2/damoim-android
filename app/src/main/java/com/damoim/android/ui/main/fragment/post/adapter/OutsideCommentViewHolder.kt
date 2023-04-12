@@ -10,11 +10,7 @@ import com.damoim.android.databinding.OutsideCommentItemBinding
 class OutsideCommentViewHolder(
     private val binding: OutsideCommentItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
-    private val insideCommentAdapter by lazy { InsideCommentAdapter() }
 
-    init {
-        binding.outsideRecycler.adapter = insideCommentAdapter
-    }
     fun bind(item: OutsideComment) {
         with(binding) {
             Glide.with(itemView.context).load(item.profileImg)
@@ -28,7 +24,6 @@ class OutsideCommentViewHolder(
             outsideCommentItemTxtContents.text = item.contents
 
             outsideCommentItemTxtDate.text = item.date
-            insideCommentAdapter.setItemList(item.reComments)
         }
     }
 }

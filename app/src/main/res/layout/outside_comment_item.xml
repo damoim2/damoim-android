@@ -58,15 +58,4 @@
         app:layout_constraintStart_toStartOf="@+id/outside_comment_item_txt_contents"
         app:layout_constraintTop_toBottomOf="@+id/outside_comment_item_txt_contents" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/outside_recycler"
-        android:layout_marginTop="14dp"
-        android:layout_width="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical"
-        tools:listitem="@layout/inside_comment_item"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/outside_comment_txt_recomment"
-        app:layout_constraintTop_toBottomOf="@id/outside_comment_txt_recomment" />
 </androidx.constraintlayout.widget.ConstraintLayout>

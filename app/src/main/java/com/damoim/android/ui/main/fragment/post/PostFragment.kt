@@ -58,6 +58,39 @@ class PostFragment :
                 InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일")
             ),
             "12월 13일"
+        ),
+        OutsideComment(
+            "",
+            "황혁주",
+            "ㅎㅇㅎㅇ",
+            arrayListOf(
+                InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일"),
+                InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일"),
+                InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일")
+            ),
+            "12월 13일"
+        ),
+        OutsideComment(
+            "",
+            "황혁주",
+            "ㅎㅇㅎㅇ",
+            arrayListOf(
+                InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일"),
+                InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일"),
+                InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일")
+            ),
+            "12월 13일"
+        ),
+        OutsideComment(
+            "",
+            "황혁주",
+            "ㅎㅇㅎㅇ",
+            arrayListOf(
+                InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일"),
+                InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일"),
+                InsideComment("", "황혁주", "ㅎㅇㅎㅇㅎㅇ", "12월 13일")
+            ),
+            "12월 13일"
         )
     )
 

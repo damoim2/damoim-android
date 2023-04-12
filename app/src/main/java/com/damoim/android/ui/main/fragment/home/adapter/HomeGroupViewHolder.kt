@@ -1,5 +1,11 @@
 package com.damoim.android.ui.main.fragment.home.adapter
 
+import android.widget.ImageView
+import androidx.core.view.ViewCompat
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.FragmentNavigatorExtras
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
@@ -14,7 +20,9 @@ class HomeGroupViewHolder(
     RecyclerView.ViewHolder(binding.root) {
     init {
         itemView.setOnClickListener {
-            listener()
+            //listener()
+            val extras = FragmentNavigatorExtras(binding.homeGroupItemImg to "test")
+            itemView.findNavController().navigate(R.id.action_homeFragment_to_groupFragment,null, null, extras)
         }
     }
 
