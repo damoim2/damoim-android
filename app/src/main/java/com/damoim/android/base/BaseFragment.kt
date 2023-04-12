@@ -69,10 +69,4 @@ abstract class BaseFragment<B : ViewBinding>(private val bind: (View) -> B, @Lay
             inputManager.hideSoftInputFromWindow(currentFocus.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
         }
     }
-
-    fun visibleMainBottomNav(isVisible: Boolean) {
-        if (requireActivity() is MainActivity) {
-            (requireActivity() as MainActivity).visibleBottomNavigation(isVisible)
-        }
-    }
 }

@@ -8,6 +8,7 @@ import com.damoim.android.R
 import com.damoim.android.base.BaseActivity
 import com.damoim.android.databinding.ActivityMainBinding
 import com.damoim.android.util.Utils
+import com.damoim.android.util.Utils.Companion.setStatusBarColor
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import timber.log.Timber
 
@@ -29,21 +30,16 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 R.id.homeFragment,
                 R.id.chatFragment,
                 R.id.calenderFragment,
+                R.id.groupFragment,
                 R.id.profileFragment -> {
                     binding.mainBottom.visibility = View.VISIBLE
+                    setStatusBarColor(getColor(R.color.transparent))
                 }
                 else -> {
                     binding.mainBottom.visibility = View.GONE
+                    setStatusBarColor(getColor(R.color.purple01))
                 }
             }
-        }
-    }
-
-    fun visibleBottomNavigation(isVisible: Boolean) {
-        if (isVisible) {
-            binding.mainBottom.visibility = View.VISIBLE
-        } else {
-            binding.mainBottom.visibility = View.GONE
         }
     }
 }
