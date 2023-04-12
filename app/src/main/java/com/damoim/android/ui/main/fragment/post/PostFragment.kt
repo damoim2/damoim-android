@@ -88,6 +88,10 @@ class PostFragment :
             postImgBack.setOnClickListener {
                 findNavController().popBackStack()
             }
+
+            postLlMainImgContainer.setOnClickListener {
+                findNavController().navigate(R.id.action_postFragment_to_imageFragment)
+            }
         }
 
         // TODO: 백그라운드 변경 시 뒷 배경이 나오지 않도록 수정

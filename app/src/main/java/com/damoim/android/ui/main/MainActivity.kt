@@ -31,6 +31,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 R.id.chatFragment,
                 R.id.calenderFragment,
                 R.id.groupFragment,
+                R.id.imageFragment,
                 R.id.profileFragment -> {
                     binding.mainBottom.visibility = View.VISIBLE
                     setStatusBarColor(getColor(R.color.transparent))
