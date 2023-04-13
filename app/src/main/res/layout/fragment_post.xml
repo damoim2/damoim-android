@@ -1,62 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/postFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/postFragment"
     android:fitsSystemWindows="true"
     tools:context=".ui.main.fragment.post.PostFragment">
 
-    <androidx.core.widget.NestedScrollView
-        android:id="@+id/post_scroll"
-        app:layout_constraintBottom_toTopOf="@id/post_ll_comment_input_box"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/purple01"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/post_img_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/ic_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/post_txt_title"
+            style="@style/Title1.bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/post_img_back"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="계모임 이름" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/post_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/post_ll_comment_input_box"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/purple01"
-                android:paddingHorizontal="16dp"
-                android:paddingVertical="10dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/post_img_back"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_marginTop="40dp"
-                    android:src="@drawable/ic_arrow"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/post_txt_title"
-                    style="@style/Title1.bold"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="40dp"
-                    app:layout_constraintStart_toStartOf="@+id/post_img_back"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:text="계모임 이름" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/post_cl_container"
@@ -67,7 +67,7 @@
                 android:paddingVertical="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/post_item_img_writer_profile_img"
@@ -222,8 +222,8 @@
                     android:id="@+id/post_img_comment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
                     android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
                     android:src="@drawable/ic_comment_line"
                     app:layout_constraintStart_toStartOf="@+id/post_cl_comment"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -248,7 +248,6 @@
                     android:orientation="vertical"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.4"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/post_img_comment"
                     tools:listitem="@layout/outside_comment_item" />
@@ -258,41 +257,42 @@
 
 
     <LinearLayout
-        android:paddingTop="8dp"
-        android:background="@drawable/bg_layout_gray07_top_purple04"
         android:id="@+id/post_ll_comment_input_box"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_layout_gray06_top_purple05"
         android:orientation="vertical"
+        android:paddingTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:layout_marginHorizontal="16dp"
             android:background="@drawable/bg_layout_gray05"
-            android:layout_marginHorizontal="16dp">
+            android:orientation="horizontal"
+            android:padding="10dp">
 
             <TextView
-                android:paddingVertical="2dp"
-                android:paddingHorizontal="4dp"
                 android:id="@+id/post_txt_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                tools:text="\@김초코"
-                android:textSize="13sp"
                 android:background="@drawable/bg_btn_purple05"
-                android:textColor="@color/purple01"/>
+                android:gravity="center"
+                android:paddingHorizontal="4dp"
+                android:paddingVertical="2dp"
+                android:textColor="@color/purple01"
+                android:textSize="13sp"
+                tools:text="\@김초코" />
+
             <EditText
                 android:id="@+id/post_edit_txt_input_box"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="8dp"
+                android:layout_weight="1"
                 android:background="@null"
                 android:hint="@string/comment_input_hint"
                 android:textColorHint="@color/gray03"
@@ -301,13 +301,13 @@
 
         <ImageView
             android:id="@+id/post_img_btn"
-            android:layout_gravity="right"
-            android:layout_marginRight="16dp"
-            android:layout_marginVertical="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="invisible"
-            android:src="@drawable/btn_purple_circle"/>
+            android:layout_gravity="right"
+            android:layout_marginVertical="8dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/btn_purple_circle"
+            android:visibility="invisible" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -98,11 +98,11 @@ class PostFragment :
         keyboardVisibilityUtils = KeyboardVisibilityUtils(requireActivity().window, onShowKeyboard = { _, _ ->
             // 키보드가 올라올 때의 동작
             binding.postImgBtn.visibility = VISIBLE
-            // binding.postLlCommentInputBox.background = resources.getDrawable(R.drawable.bg_layout_gray07_top_purple04_round, null)
+            //binding.postLlCommentInputBox.background = resources.getDrawable(R.drawable.bg_layout_gray06_top_purple05_round, null)
         }, onHideKeyboard = {
             // 키보드가 내려갈 때의 동작
             binding.postImgBtn.visibility = INVISIBLE
-            //  binding.postLlCommentInputBox.background = resources.getDrawable(R.drawable.bg_layout_gray07_top_purple04, null)
+            //binding.postLlCommentInputBox.background = resources.getDrawable(R.drawable.bg_layout_gray06_top_purple05, null)
         })
     }
 

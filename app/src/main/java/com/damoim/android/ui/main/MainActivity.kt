@@ -30,10 +30,13 @@ class MainActivity : BaseActivity<ActivityMainBinding>(ActivityMainBinding::infl
                 R.id.homeFragment,
                 R.id.chatFragment,
                 R.id.calenderFragment,
-                R.id.groupFragment,
-                R.id.imageFragment,
                 R.id.profileFragment -> {
                     binding.mainBottom.visibility = View.VISIBLE
+                    setStatusBarColor(getColor(R.color.transparent))
+                }
+                R.id.groupFragment,
+                R.id.imageFragment -> {
+                    binding.mainBottom.visibility = View.GONE
                     setStatusBarColor(getColor(R.color.transparent))
                 }
                 else -> {
