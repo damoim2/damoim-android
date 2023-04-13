@@ -94,15 +94,14 @@ class PostFragment :
             }
         }
 
-        // TODO: 백그라운드 변경 시 뒷 배경이 나오지 않도록 수정
         keyboardVisibilityUtils = KeyboardVisibilityUtils(requireActivity().window, onShowKeyboard = { _, _ ->
             // 키보드가 올라올 때의 동작
             binding.postImgBtn.visibility = VISIBLE
-            //binding.postLlCommentInputBox.background = resources.getDrawable(R.drawable.bg_layout_gray06_top_purple05_round, null)
+            binding.postLlCommentInputBox.background = resources.getDrawable(R.drawable.bg_layout_gray06_top_purple05_round, null)
         }, onHideKeyboard = {
             // 키보드가 내려갈 때의 동작
             binding.postImgBtn.visibility = INVISIBLE
-            //binding.postLlCommentInputBox.background = resources.getDrawable(R.drawable.bg_layout_gray06_top_purple05, null)
+            binding.postLlCommentInputBox.background = resources.getDrawable(R.drawable.bg_layout_gray06_top_purple05, null)
         })
     }
 
