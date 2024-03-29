@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">damoim</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">홈</string>
+    <string name="calender">달력</string>
+    <string name="chat">채팅</string>
+    <string name="my_profile">내 프로필</string>
+    <string name="modify">수정</string>
+    <string name="my_account">내 계좌</string>
+    <string name="modify_or_remove">수정/삭제</string>
+    <string name="setting">설정</string>
+    <string name="my_group">나의 모임</string>
+    <string name="upcoming_schedule">다가오는 일정</string>
+</resources>
